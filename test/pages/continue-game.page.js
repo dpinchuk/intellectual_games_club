@@ -12,7 +12,7 @@ class ContinueGame extends Base {
 
     gamesInProgress() {
         let tbodyList = $$(sel.tbody);
-        console.log('gamesInProgress -> size = ' + tr.length);
+        console.log('gamesInProgress -> size = ' + tbodyList.length);
         if (tbodyList.length === 0) {
             assert.equal(exp.continueGamePageIfNoGamesInProgressAvailable, this.read(sel.noGamesInProgress));
             assert.equal(exp.continueGamePageTableHeaderContentTextAlign, this.getStyleValue(sel.noGamesInProgress, 'text-align'));

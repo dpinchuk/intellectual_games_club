@@ -1,7 +1,7 @@
 export default {
     table: '.table',
     tbody: '<tbody />',
-    noGamesInProgress: 'h1=No games in progress.',
+    noGamesInProgress: '#no-games-page',
     thead: '//*[@id="games-page"]/table/thead',
     tr: '//*[@id="games-page"]/table/thead/tr',
 
