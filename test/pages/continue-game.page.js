@@ -3,7 +3,6 @@ import exp from '../expected/continue-game.exp';
 import {assert} from 'chai';
 import Base from './base';
 
-
 class ContinueGame extends Base {
 
     tableIsDisplayed() {
@@ -37,6 +36,22 @@ class ContinueGame extends Base {
         }
     }
 
+    tableContentStructure() {
+        let thList = $$(sel.tr);
+        let thListText = [];
+        if (thList.length === exp.continueGamePageHeaderRawsItemsList.length) {
+            thList.forEach(item => {
+                thListText.push(this.read(item));
+                return thListText;
+            });
+
+            assert.equal(exp.continueGamePageHeaderRaws, thList.length);
+            assert.equal(exp.continueGamePageHeaderRawsItemsList, thListText)
+
+        } else {
+            console.log('Table items empty!');
+        }
+    }
 
     tableHeaderItemsHasStyles() {
         let thList = $$(sel.tr);
