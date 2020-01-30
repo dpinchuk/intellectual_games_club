@@ -34,14 +34,22 @@ export default {
 
     continueGamePageIfNoGamesInProgressAvailable: 'No games in progress.',
 
-    continueGamePageHeaderRaws: 6,
-    continueGamePageHeaderRawsItemsList: [
+    tableRawsLength: 6,
+
+    headerContentItemsList: [
         '#',
         'ID',
         'Phase',
         'Start Date',
         'Start Time',
         'D'
+    ],
+
+    tableContentItemsList: [
+        'ID',
+        'Phase',
+        'Start Date',
+        'Start Time'
     ]
 
 

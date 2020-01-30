@@ -61,7 +61,7 @@ class Base {
     }
 
     getStyleValue(sel, style) {
-        return $(sel).getCSSProperty(style);
+        return $(sel).getCSSProperty(style).value;
     }
 
 }

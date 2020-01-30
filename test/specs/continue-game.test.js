@@ -26,5 +26,16 @@ describe('Continue-page', () => {
         continueGame.gamesInProgress();
     });
 
+    it('Table content structure (#, ID, Phase, Start Date, Start Time, D)', () => {
+        continueGame.tableContentStructure();
+    });
+
+    it('Table content structure (#, Phase, Start Date, Start Time)', () => {
+        continueGame.tableContent();
+    });
+
+    it('Table content structure (ID)', () => {
+        continueGame.tableContentID();
+    });
 
 });
