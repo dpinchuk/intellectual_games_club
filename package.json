@@ -1,0 +1,46 @@
+{
+  "name": "automation-webdriverio",
+  "version": "1.0.0",
+  "description": "Test Automation Framework | WebDriver I/O | Node.js | JavaScript | Mocha | Chai | Selenium",
+  "main": "wdio.conf.js",
+  "scripts": {
+    "test": "npm run clean && npm run temp && wdio wdio.conf.js",
+    "tm": "npm run clean && npm run temp-mac && wdio wdio.conf.js",
+    "azure": "npm run temp && wdio wdio.conf.js",
+    "clean": "del-cli --force temp",
+    "temp": "mkdir temp\\screenshots",
+    "temp-mac": "mkdir temp temp/screenshots"
+  },
+  "keywords": [
+    "Test",
+    "Automation",
+    "Framework",
+    "WebDriverIO",
+    "Node.js",
+    "JavaScript",
+    "Mocha",
+    "Chai",
+    "Selenium"
+  ],
+  "author": "Arthur Senko",
+  "license": "ISC",
+  "repository": "https://ReactWebDevelopment@dev.azure.com/ReactWebDevelopment/IntGames/_git/Automation",
+  "dependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/register": "^7.7.7",
+    "@wdio/cli": "^5.18.0",
+    "chai": "^4.2.0",
+    "webdriverio": "^5.18.0"
+  },
+  "devDependencies": {
+    "@wdio/allure-reporter": "^5.16.16",
+    "@wdio/local-runner": "^5.18.4",
+    "@wdio/mocha-framework": "^5.16.15",
+    "@wdio/spec-reporter": "^5.16.11",
+    "@wdio/sync": "^5.17.0",
+    "chromedriver": "^79.0.0",
+    "wdio-chromedriver-service": "^5.0.2"
+  }
+}
