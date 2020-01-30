@@ -27,10 +27,10 @@ export default {
     continueGamePageTableHeaderContentIdTextDecoration: 'underline',
 
     continueGamePageTableHeaderContentD: 'contains icon',
-    continueGamePageTableHeaderContentDcursor: 'pointer',
+    continueGamePageTableHeaderContentDCursor: 'pointer',
     continueGamePageTableHeaderContentDHeight: '16px',
-    continueGamePageTableHeaderContentDalign: 'center',
-    continueGamePageTableHeaderContentDclick: 'removes a game from the list',
+    continueGamePageTableHeaderContentDAlign: 'center',
+    continueGamePageTableHeaderContentDClick: 'removes a game from the list',
 
     continueGamePageIfNoGamesInProgressAvailable: 'No games in progress.',
 

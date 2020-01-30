@@ -4,5 +4,4 @@ export default {
     noGamesInProgress: '#no-games-page',
     thead: '//*[@id="games-page"]/table/thead',
     tr: '//*[@id="games-page"]/table/thead/tr',
-
 }

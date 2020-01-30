@@ -76,15 +76,25 @@ class ContinueGame extends Base {
         let thList = $$(sel.tr);
         console.log('tableContent -> thList.length = ' + thList.length);
         if(thList.length === exp.tableRawsLength) {
-            thList.forEach(item => {
-                assert.equal(exp.continueGamePageTableHeaderContentIdBorderTop, this.getStyleValue(item, 'border-top'));
-                assert.equal(exp.continueGamePageTableHeaderContentIdFontColor, this.getStyleValue(item, 'color'));
-                assert.equal(exp.continueGamePageTableHeaderContentIdTextAlign, this.getStyleValue(item, 'text-align'));
-                assert.equal(exp.continueGamePageTableHeaderContentIdFontSize, this.getStyleValue(item, 'font-size'));
-                assert.equal(exp.continueGamePageTableHeaderContentIdFontWeight, this.getStyleValue(item, 'font-weight'));
-                assert.equal(exp.continueGamePageTableHeaderContentIdCursor, this.getStyleValue(item, 'cursor'));
-                assert.equal(exp.continueGamePageTableHeaderContentIdTextDecoration, this.getStyleValue(item, 'text-decoration'));
-            });
+            assert.equal(exp.continueGamePageTableHeaderContentDCursor, this.getStyleValue(thList[1], 'cursor'));
+            assert.equal(exp.continueGamePageTableHeaderContentDHeight, this.getStyleValue(thList[1], 'height'));
+            assert.equal(exp.continueGamePageTableHeaderContentDHeight, this.getStyleValue(thList[1], 'text-align'));
+        } else {
+            console.log('Table is empty!');
+        }
+    }
+
+    tableContentD() {
+        let thList = $$(sel.tr);
+        console.log('tableContent -> thList.length = ' + thList.length);
+        if(thList.length === exp.tableRawsLength) {
+            assert.equal(exp.continueGamePageTableHeaderContentIdBorderTop, this.getStyleValue(thList[5], 'border-top'));
+            assert.equal(exp.continueGamePageTableHeaderContentIdFontColor, this.getStyleValue(thList[5], 'color'));
+            assert.equal(exp.continueGamePageTableHeaderContentIdTextAlign, this.getStyleValue(thList[5], 'text-align'));
+            assert.equal(exp.continueGamePageTableHeaderContentIdFontSize, this.getStyleValue(thList[5], 'font-size'));
+            assert.equal(exp.continueGamePageTableHeaderContentIdFontWeight, this.getStyleValue(thList[5], 'font-weight'));
+            assert.equal(exp.continueGamePageTableHeaderContentIdCursor, this.getStyleValue(thList[5], 'cursor'));
+            assert.equal(exp.continueGamePageTableHeaderContentIdTextDecoration, this.getStyleValue(thList[5], 'text-decoration'));
         } else {
             console.log('Table is empty!');
         }
