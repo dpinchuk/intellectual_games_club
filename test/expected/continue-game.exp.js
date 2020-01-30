@@ -32,6 +32,9 @@ export default {
     continueGamePageTableHeaderContentDalign: 'center',
     continueGamePageTableHeaderContentDclick: 'removes a game from the list',
 
-    continueGamePageIfnogamesinProgressAvailable: '“No games in progress.” text is displayed',
+    continueGamePageIfNoGamesInProgressAvailable: 'No games in progress.',
+
+    continueGamePageHeaderRaws: 6,
+
 
 }

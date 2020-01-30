@@ -10,4 +10,17 @@ describe('Continue-page', () => {
         continueGame.tableIsDisplayed();
     });
 
+    it('Table Header is displayed', () => {
+        continueGame.tableHeaderIsDisplayed();
+    });
+
+    it('Table Header structure', () => {
+        continueGame.tableHeaderStructure();
+    });
+
+    it('No games in progress', () => {
+        continueGame.gamesInProgress();
+    });
+
+
 });

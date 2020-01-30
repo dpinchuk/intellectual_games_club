@@ -56,5 +56,13 @@ class Base {
         $(sel).click();
     }
 
+    read(sel) {
+        return $(sel).getText();
+    }
+
+    getStyleValue(sel, style) {
+        return $(sel).getCSSProperty(style);
+    }
+
 }
 export default Base;
