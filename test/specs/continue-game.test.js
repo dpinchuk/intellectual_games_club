@@ -18,6 +18,10 @@ describe('Continue-page', () => {
         continueGame.tableHeaderStructure();
     });
 
+    it('Table Header items has styles', () => {
+        continueGame.tableHeaderItemsHasStyles();
+    });
+
     it('No games in progress', () => {
         continueGame.gamesInProgress();
     });

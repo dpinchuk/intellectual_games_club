@@ -11,13 +11,14 @@ class ContinueGame extends Base {
     }
 
     gamesInProgress() {
-        let tr = $$(sel.tbody);
-        if (tr.length === 0) {
+        let tbodyList = $$(sel.tbody);
+        console.log('gamesInProgress -> size = ' + tr.length);
+        if (tbodyList.length === 0) {
             assert.equal(exp.continueGamePageIfNoGamesInProgressAvailable, this.read(sel.noGamesInProgress));
-            assert.equal(exp.continueGamePageTableHeaderContentTextAlign, this.getStyleValue(sel.noGamesInProgress, 'text-align'))
-            assert.equal(exp.continueGamePageTableHeaderContentFontSize, this.getStyleValue(sel.noGamesInProgress, 'font-size'))
-            assert.equal(exp.continueGamePageTableHeaderContentFontWeight, this.getStyleValue(sel.noGamesInProgress, 'font-weight'))
-            assert.equal(exp.continueGamePageTableHeaderContentFontColor, this.getStyleValue(sel.noGamesInProgress, 'color'))
+            assert.equal(exp.continueGamePageTableHeaderContentTextAlign, this.getStyleValue(sel.noGamesInProgress, 'text-align'));
+            assert.equal(exp.continueGamePageTableHeaderContentFontSize, this.getStyleValue(sel.noGamesInProgress, 'font-size'));
+            assert.equal(exp.continueGamePageTableHeaderContentFontWeight, this.getStyleValue(sel.noGamesInProgress, 'font-weight'));
+            assert.equal(exp.continueGamePageTableHeaderContentFontColor, this.getStyleValue(sel.noGamesInProgress, 'color'));
         } else {
             $(sel.table).isDisplayed();
         }
@@ -28,14 +29,27 @@ class ContinueGame extends Base {
     }
 
     tableHeaderStructure() {
-        assert.equal(exp.continueGamePageHeaderRaws, $$(sel.tableHeaderRaws.length));
-        assert.equal(exp.continueGamePageTableHeaderFontColor, this.getStyleValue(sel.thead, 'font-color'));
-        assert.equal(exp.continueGamePageTableHeaderBackgroundColor, this.getStyleValue(sel.thead, 'background-color'));
-        assert.equal(exp.continueGamePageTableHeaderBorderColor, this.getStyleValue(sel.thead, 'border-color'));
-        assert.equal(exp.continueGamePageTableHeaderTextAlign, this.getStyleValue(sel.thead, 'text-align'));
-        assert.equal(exp.continueGamePageTableHeaderFontSize, this.getStyleValue(sel.thead, 'font-size'));
-        assert.equal(exp.continueGamePageTableHeaderFontWeight, this.getStyleValue(sel.thead, 'font-weight'));
+        let thList = $$(sel.tr);
+        if (thList.length !== 0) {
+            assert.equal(exp.continueGamePageHeaderRaws, thList.length);
+        } else {
+            console.log('Table items empty!');
+        }
+    }
 
+
+    tableHeaderItemsHasStyles() {
+        let thList = $$(sel.tr);
+        if(thList.length !== 0) {
+            thList.forEach(item => {
+                assert.equal(exp.continueGamePageTableHeaderFontColor, this.getStyleValue(item, 'color'));
+                assert.equal(exp.continueGamePageTableHeaderBackgroundColor, this.getStyleValue(item, 'background-color'));
+                assert.equal(exp.continueGamePageTableHeaderBorderColor, this.getStyleValue(item, 'border-color'));
+                assert.equal(exp.continueGamePageTableHeaderTextAlign, this.getStyleValue(item, 'text-align'));
+                assert.equal(exp.continueGamePageTableHeaderFontSize, this.getStyleValue(item, 'font-size'));
+                assert.equal(exp.continueGamePageTableHeaderFontWeight, this.getStyleValue(item, 'font-weight'));
+            });
+        }
     }
 }
 
